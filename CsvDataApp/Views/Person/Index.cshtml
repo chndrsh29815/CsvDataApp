@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CsvDataApp.Models.Person>
+
+<h1>Persons List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Identity</th>
+            <th>FirstName</th>
+            <th>Sirname</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Mobile</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Identity</td>
+                <td>@item.FirstName</td>
+                <td>@item.Sirname</td>
+                <td>@item.Age</td>
+                <td>@item.Sex</td>
+                <td>@item.Mobile</td>
+                <td>@item.Active</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form asp-controller="Csv" asp-action="Import" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <button type="submit">Upload CSV</button>
+</form>
+
+@if (@TempData["ImportSummary"] != null)
+{
+    <div class="alert alert-info">
+      @TempData["ImportSummary"]
+        @if (TempData["DownloadLink"] != null)
+        {
+            <br />
+            <a href="@TempData["DownloadLink"]" class="btn btn-primary">Download Bad Records</a>
+        }
+    </div>
+}

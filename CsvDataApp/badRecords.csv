@@ -1,0 +1,61 @@
+Identity,FirstName,Surname,Age,Sex,Mobile,Active,,Error
+3,Gerhard,Pretorious,M,28,082123456,TRUE,,"The conversion cannot be performed.
+    Text: 'M'
+    MemberName: Age
+    MemberType: System.Int32
+    TypeConverter: 'CsvHelper.TypeConversion.Int32Converter'
+IReader state:
+   ColumnCount: 8
+   CurrentIndex: 3
+   HeaderRecord:
+[""Identity"",""FirstName"",""Surname"",""Age"",""Sex"",""Mobile"",""Active"",""""]
+IParser state:
+   ByteCount: 0
+   CharCount: 171
+   Row: 4
+   RawRow: 4
+   Count: 8
+   RawRecord:
+3,Gerhard,Pretorious,M,28,082123456,TRUE,
+
+"
+4,Draven,Wolf,33,,M,,FALSE,"The conversion cannot be performed.
+    Text: ''
+    MemberName: Active
+    MemberType: System.Boolean
+    TypeConverter: 'CsvHelper.TypeConversion.BooleanConverter'
+IReader state:
+   ColumnCount: 8
+   CurrentIndex: 6
+   HeaderRecord:
+[""Identity"",""FirstName"",""Surname"",""Age"",""Sex"",""Mobile"",""Active"",""""]
+IParser state:
+   ByteCount: 0
+   CharCount: 199
+   Row: 5
+   RawRow: 5
+   Count: 8
+   RawRecord:
+4,Draven,Wolf,33,,M,,FALSE
+
+"
+8,Andrew,Caruthers,45,M,07212345679,Yes,,"The conversion cannot be performed.
+    Text: 'Yes'
+    MemberName: Active
+    MemberType: System.Boolean
+    TypeConverter: 'CsvHelper.TypeConversion.BooleanConverter'
+IReader state:
+   ColumnCount: 8
+   CurrentIndex: 6
+   HeaderRecord:
+[""Identity"",""FirstName"",""Surname"",""Age"",""Sex"",""Mobile"",""Active"",""""]
+IParser state:
+   ByteCount: 0
+   CharCount: 348
+   Row: 9
+   RawRow: 9
+   Count: 8
+   RawRecord:
+8,Andrew,Caruthers,45,M,07212345679,Yes,
+
+"
